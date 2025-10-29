@@ -38,7 +38,7 @@ def load_wind_file(filepath):
     """
     Loads and sorts a wind time series file (Time, V).
     """
-    # Use header=0 to correctly read the first line as column names
+    # FIX: Use header=0 to correctly read the first line as column names
     df = pd.read_csv(filepath, sep=r"\s+", comment="#", header=0) 
     
     if df.shape[1] < 2:
@@ -59,8 +59,6 @@ def build_system_matrices(p):
     K = np.array([[ p["k2"],        -p["k2"]],
                   [-p["k2"], p["k1"]+p["k2"]]], dtype=float)
     return M, C, K
-
-# --- NEW FUNCTIONS FOR COMMIT 2 ---
 
 def simulate_single_case(params, wind_df, ct_interp, t_skip=60.0):
     """
