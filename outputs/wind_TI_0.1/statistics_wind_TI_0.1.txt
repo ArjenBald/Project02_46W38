@@ -1,0 +1,2 @@
+V_avg	CT_avg	xt_mean	xt_std	xb_mean	xb_std
+4.000001	0.923000	0.203991	0.137887	0.134031	0.091829
